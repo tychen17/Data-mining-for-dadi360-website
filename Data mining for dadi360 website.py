@@ -103,9 +103,9 @@ def find_location(row):
             location_found.append(location)
         if pd.notna(title) and re.search(r'\b' + location, title):
             location_found.append(location)
-        elif pd.notna(content) and re.search(r'\b' + location + r'\b', content):
+        if pd.notna(content) and re.search(r'\b' + location + r'\b', content):
             location_found.append(location)
-        elif pd.notna(content) and re.search(location + r'\b', content):
+        if pd.notna(content) and re.search(location + r'\b', content):
             location_found.append(location)
         elif pd.notna(content) and re.search(r'\b' + location, content):
             location_found.append(location)
